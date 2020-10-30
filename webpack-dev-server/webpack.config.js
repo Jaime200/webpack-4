@@ -21,10 +21,7 @@ module.exports = {
         {
           test: /\.css$/,
           use :[
-            {
-              loader : MiniCSSExtractPlugin.loader
-            },
-
+            'style-loader',
             'css-loader'
           ]
         },
@@ -34,9 +31,7 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
        title: 'Webpack dev server hot reload'    
-      }),
-      new MiniCSSExtractPlugin({
-        filename : 'css/[name].css'
       })
+      
     ] 
 }
